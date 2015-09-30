@@ -1,0 +1,63 @@
+body{
+	background-image: url("blueTextureBG.jpg");
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+#all{
+	overflow: hidden;
+	background-color: white;
+	border:solid 10px white;
+}
+
+header>h1{
+	color: white;
+	text-align: center;
+}
+
+section{
+	overflow: hidden;
+	border:4px solid #1d2475;
+	background-color: #cccccc;
+	border-radius: 15px;
+	padding:5px;
+	margin-top:10px;
+}
+
+section > h2{
+	border-bottom: 2px dashed blue;
+	text-align: right;
+}
+
+#aside{
+	float: right
+}
+
+header{
+	overflow:hidden;
+	background-color: #8e8e8e;
+	margin-bottom: 10px;
+	border-collapse: collapse;
+}
+
+header > ul{
+	color:#b7b7b7;
+	font-size: 14pt;
+}
+aside{
+	width: 150px;
+	background-color: #3366CC;
+	border: 4px solid #1D2475;
+	border-radius: 15px;
+	float: left;
+	margin-right: 10px;
+
+}
+article{
+	overflow: hidden;
+	border-collapse: collapse;
+} 
+
+* * * * *:hover{
+	color:#ffff00;
+}
