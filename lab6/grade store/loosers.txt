@@ -1,0 +1,42 @@
+song;1312123;432432;visa
+song;1312123;432432;visa
+john;123123;12323;mastercard
+sonh;131213;1231233;mastercard
+tong;543534;324423;visa
+bong;12314;12321312;mastercard
+jong;1312;131221;mastercard
+whang;65334;3131431;visa
+Song;1235435;23423423;visa
+Song;321132;312312;visa
+Song bob;321132;312312;mastercard
+Song-bob;321132;312312;mastercard
+Song-ob;321132;312312;mastercard
+Song-Bob;321132;312312;mastercard
+Songdob;321132;312312;mastercard
+Song-dob;321132;312312;mastercard
+Song-dob;321132;312312;mastercard
+Song dob;321132;312312;mastercard
+Song-Dob;321132;312312;mastercard
+Song Bob;321132;312312;mastercard
+SOng-Bob;321132;312312;mastercard
+Song Hyeongseok;321132;312312;mastercard
+Song Hyeongseok;321132;5123456789012345;mastercard
+Song Hyeongseok;321132;4123456789012345;visa
+Song Hyeongseok;321132;4123456789012345;visa
+Song Hyeongseok;321132;4123456789012341;visa
+Song Hyeongseo;321132;4123456789012341;visa
+Song-Hyeo-ngseo;321132;4123456789012341;visa
+Song-Hyeo--ngseo;321132;4123456789012341;visa
+Song-Hyeo-Hgseo;321132;4123456789012341;visa
+Song-Hyeo-Ho gseo;321132;4123456789012341;visa
+So ng-Hyeo-Hogseo;321132;4123456789012341;visa
+Song-Hyeo-Ho gseo;321132;4123456789012341;visa
+Song-Hyeo-Hogs;321132;4123456789012341;visa
+Song-Hyeo-Ho gs;321132;4123456789012341;visa
+Song-Hyeo-Ho-gs;321132;4123456789012341;visa
+Song-Hyeo-Ho-gs;321132;4123456789012341;visa
+Song-Hyeo-Ho-gs;321132;4123456789012341;visa
+Song-Hyeo-Ho-gs;321132;4123456789012341;visa
+Song-Hyeo-Ho-gs;321132;4123456789012341;visa
+Song-Hyeo-Ho-gs;321132;4123456789012341;visa
+Song-Hyeo-Ho-gs;321132;4123456789012341;visa
