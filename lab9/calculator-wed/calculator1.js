@@ -43,20 +43,22 @@ window.onload = function () {
                    document.getElementById('expression').innerHTML += value;
                 
 
-                if(value == "!") {
-                        displayVal = factorial(parseFloat(displayVal));
-                        //stack.push(displayVal);
-                        fac_flag = 1;
-                        return;
-                    }
 
                 if(stack[stack.length-1]=="*" || stack[stack.length-1]=="/" || stack[stack.length-1]=="^"){
                     highPriorityCalculator(stack,displayVal);
                 }
-                else{// + or -
-                    stack.push(parseFloat(displayVal));
-                    displayVal = 0;
-                    fac_flag = 0;
+                else{
+                    if(value == "!") {
+                        if(fac_flag == 1) return;
+                        displayVal = factorial(parseFloat(displayVal));
+                        stack.push(displayVal);
+                        fac_flag = 1;
+                    }
+                    else{
+                        stack.push(parseFloat(displayVal));
+                        displayVal = 0;
+                        fac_flag = 0;
+                    } 
                 }
                 stack.push(value);
                 displayVal = 0;
