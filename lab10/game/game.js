@@ -22,59 +22,79 @@ function stopGame(){
 	timer = null;
 	targetBlocks = [];
 	selectedBlocks = [];
+	var blocks = $$(".block");
+	for (var i = 0; i < numberOfBlocks; i++) {
+		blocks[i].removeClassName("target");
+		blocks[i].removeClassName("selected");
+		blocks[i].stopObserving("click");
+	}
 }
 
 function startToSetTarget(){
+	clearTimeout(timer);
+	var rn;
 	targetBlocks = [];
 	selectedBlocks = [];
 	var allblocks = $$(".block");
 	var i;
 	$("state").textContent = "Ready!";
 	for(i=0;i<numberOfTarget;i++){
-		var rn = Math.floor(Math.random() * allblocks.length);
-		targetBlocks[i] = allblocks.splice(rn, 1);
-		targetBlocks[i] = targetBlocks[i][0];
+		while(targetBlocks.indexOf(rn = Math.floor(Math.random() * allblocks.length)) != -1);
+		targetBlocks[i] = rn;
 	}
-	
 	timer = setTimeout(setTargetToShow,interval);
 }
 
 function setTargetToShow(){
+	clearTimeout(timer);
 	$("state").textContent = "Memorize!";
-	console.log(targetBlocks);
+	var blocks = $$(".block");
 	for(var i=0;i<targetBlocks.length;i++){
-		targetBlocks[i].addClassName("target");
+		blocks[targetBlocks[i]].addClassName("target");
 	}
 	timer = setTimeout(showToSelect,interval);
 }
 
 function showToSelect(){
+	clearTimeout(timer);
 	var i;
 	var index = [];
 	$("state").textContent = "Select!";
-	for(i=0;i<targetBlocks.length;i++){
-		targetBlocks[i].removeClassName("target");
+	var blocks = $$(".block");
+	for(i=0;i<numberOfTarget;i++){
+		blocks[targetBlocks[i]].removeClassName("target");
 	}
-	var allblocks = $$(".block");
 	for(var i=0;i<numberOfBlocks;i++){
-		allblocks[i].observe("click",function(){
-			if(selectedBlocks.length == 3 || index.indexOf(this.readAttribute('data-index')) != -1) return;
-			index.push(this.readAttribute('data-index'));
+		blocks[i].observe("click",function(){
+			if(selectedBlocks.length == 3) return;
+			selectedBlocks.push(this.readAttribute('data-index'));
 			this.addClassName("selected");
-			selectedBlocks.push(this);
+			this.stopObserving("click");
 			});
 	}
-
 	timer = setTimeout(selectToResult,interval);
 }
 
 function selectToResult(){
+	clearTimeout(timer);
+	var correct = 0;
 	$("state").textContent = "Checking";
-	//$("blocks").observe("click",function(){});
-	for(var i=0;i<selectedBlocks.length;i++){
-		selectedBlocks[i].removeClassName("selected");
-
+	var blocks = $$(".block");
+	for(var i = 0; i < selectedBlocks.length; i++){
+		blocks[selectedBlocks[i]].removeClassName("selected");
 	}
-
-	timer = setTimeout(startToSetTarget,interval);
+	for(var i = 0; i < numberOfBlocks; i++){
+		blocks[i].stopObserving("click");
+	}
+	for(var i = 0; i < numberOfTarget; i++){
+		for(var j = 0; j < numberOfTarget; j++){
+			if(selectedBlocks[i] == targetBlocks[j]){
+				correct++;
+			}
+		}
+	}
+	var current_answer = $("answer").innerHTML;
+	var display = current_answer.split("/");
+	$("answer").textContent = (parseInt(display[0]) + correct) + "/" + (parseInt(display[1]) + numberOfTarget);
+	timer = setInterval(startToSetTarget, interval);
 }
